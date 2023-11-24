@@ -1,0 +1,25 @@
+Hello World!!
+Hello World!!
+Loose
+Loose
+0,2343795
+Loose
+0,6538067
+Loose
+0,9528821
+Loose
+0,647457
+Loose
+2,131975
+Loose
+1,406111
+Loose
+00:00:06
+Loose
+00:00:03
+Loose
+00:00:03
+0
+Loose
+00:00:10
+0

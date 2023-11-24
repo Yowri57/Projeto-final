@@ -7,15 +7,15 @@ public class BubbleShooterController : MonoBehaviour
 
 	public bool isAiming;
 
-	private float rotationSpeed = 800.0f;
-	private float maxLeftAngle = 180.0f;
+	private float rotationSpeed = 200.0f;
+	private float maxLeftAngle = 160.0f;
 	private float maxRightAngle = 270.0f;
 
 	void Start()
 	{
 		isAiming = true;
 	}
-
+//alterar parar localizar o touch após o onclick
 	void Update()
 	{
 		if (isAiming)

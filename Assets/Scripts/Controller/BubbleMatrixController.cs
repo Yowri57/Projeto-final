@@ -8,14 +8,14 @@ namespace com.javierquevedo
 		public float leftBorder = 0.0f;
 		public float rightBorder = 10.5f;
 		public float topBorder = 10.0f;
-		public int rows = 10;
+		public int rows = 4;
 		public int columns = 10;
 		public float bubbleRadius = 0.5f;
-		public float addRowPeriod = 10.0f;
+		public float addRowPeriod = 20.0f;
 		public BubbleMatrixGeometry geometry;
 		private const float _bubbleLinearSpeed = 12.0f;
 		private const string _bubblePrefabName = "Prefabs/BubblePrefab";
-		private const int _defaultRowsCount = 5;
+		private const int _defaultRowsCount = 3;
 		public GameObject Mostrador;
 		private BubbleMatrix _matrix;
 		private GameObject _bubblesContainer;
@@ -61,6 +61,7 @@ namespace com.javierquevedo
 					this._currentBubble = null;
 				}
 			}
+
 		}
 		private BubbleController createBubble()
 		{
@@ -84,17 +85,17 @@ namespace com.javierquevedo
 		{
 			Mostrador = new GameObject("Mostrador");
 			Mostrador.transform.localScale = new Vector3(0.025f, 0.025f, 0.025f);
-			Mostrador.transform.position = new Vector3(15f, 5f, 0f);
+			Mostrador.transform.position = new Vector3(13.4f, 6f, 0f);
 			spriteRenderer = Mostrador.AddComponent<SpriteRenderer>();
 			attmostrador();
 		}
-public void attmostrador()
-{
-    corAtual = (GetColor.Cor)UnityEngine.Random.Range(0, System.Enum.GetValues(typeof(GetColor.Cor)).Length);
-    string nomeCor = corAtual.ToString();
-    string spritePath = "Sprites/Bubbles/" + nomeCor + "BubbleSprite";
-    spriteRenderer.sprite = Resources.Load<Sprite>(spritePath);
-}
+		public void attmostrador()
+		{
+			corAtual = (GetColor.Cor)UnityEngine.Random.Range(0, System.Enum.GetValues(typeof(GetColor.Cor)).Length);
+			string nomeCor = corAtual.ToString();
+			string spritePath = "Sprites/Bubbles/" + nomeCor + "BubbleSprite";
+			spriteRenderer.sprite = Resources.Load<Sprite>(spritePath);
+		}
 		private float shootingRotation()
 		{
 			float shooterRotation = this._bubbleShooter.transform.eulerAngles.z;

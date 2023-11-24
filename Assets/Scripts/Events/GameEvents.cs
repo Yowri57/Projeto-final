@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
 
 namespace com.javierquevedo.events{
 	
@@ -20,6 +21,20 @@ public class GameEvents : MonoBehaviour {
 		public static void GameFinished(GameState state){
 			if (OnGameFinished != null){
 				OnGameFinished(state);
+							//try
+			//{
+				//Pass the filepath and filename to the StreamWriter Constructor
+				StreamWriter sw = new StreamWriter("Test.txt", true);
+				//Write a line of text
+				sw.WriteLine(state.ToString());
+				//Write a second line of text
+				sw.Close();
+				HUD.gravartempo();
+			//}
+			//catch (Exception e)
+			//{
+			//	Console.WriteLine("Exception: " + e.Message);
+			//}
 			}
 		}
 		
